@@ -25,15 +25,21 @@ STEP 8: Use heatmap method of representation to show relationships between two v
 ## CODING AND OUTPUT
 
 DONE BY : DINESH S
+
 REG NO: 212224240038
 
 
 python
 import pandas as pd
+
 import numpy as np
+
 import matplotlib.pyplot as plt
+
 import seaborn as sns
+
 df=pd.read_csv('/content/titanic_dataset.csv')
+
 df.head()
 <img width="1377" height="638" alt="ds11" src="https://github.com/user-attachments/assets/146c2b57-3750-4eed-89c0-327fe56a301b" />
 
@@ -64,6 +70,7 @@ df.shape
 
 python
 df.set_index("PassengerId",inplace=True)
+
 df
 
 <img width="1338" height="428" alt="ds77" src="https://github.com/user-attachments/assets/f988c3d6-f0f1-40ef-b0f4-2c0e66e4c13e" />
