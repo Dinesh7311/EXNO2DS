@@ -23,107 +23,100 @@ STEP 7: Use cross tabulation method to quantitatively analyze the relationship b
 STEP 8: Use heatmap method of representation to show relationships between two variables, one plotted on each axis.
 
 ## CODING AND OUTPUT
-```
-DONE BY : Dinesh s
-REG NO: 212224240038
-```
 
-```python
+DONE BY : DINESH S
+REG NO: 212224240038
+
+
+python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 df=pd.read_csv('/content/titanic_dataset.csv')
 df.head()
-```
-<img width="1387" height="329" alt="image" src="https://github.com/user-attachments/assets/8e05c810-f152-4eb2-ab20-b47fb0cad33f" />
+<img width="1377" height="638" alt="ds11" src="https://github.com/user-attachments/assets/146c2b57-3750-4eed-89c0-327fe56a301b" />
 
-```python
+python
 df.info()
-```
-<img width="832" height="428" alt="image" src="https://github.com/user-attachments/assets/e2fea6c5-a09a-4163-93d9-e22312cd2c4d" />
+<img width="1332" height="463" alt="ds22" src="https://github.com/user-attachments/assets/6421375f-197e-4e59-95c5-4244725976c3" />
 
-```python
+python
 df.dtypes
-```
-<img width="866" height="578" alt="image" src="https://github.com/user-attachments/assets/d3632bff-612d-4e43-ae46-76c7a41ac6dd" />
+<img width="1547" height="862" alt="ds33" src="https://github.com/user-attachments/assets/255928de-73b5-4a74-a82d-20d06baf6f3a" />
 
-```python
+python
 df.describe()
-```
-<img width="1218" height="379" alt="image" src="https://github.com/user-attachments/assets/0a6f4dda-bed7-4ee7-a105-6439753c8fd7" />
+<img width="1320" height="313" alt="ds44" src="https://github.com/user-attachments/assets/32a6bec2-9d31-4357-8930-38008f92da30" />
 
-```python
+
+python
 df["Age"].value_counts()
-```
-<img width="1008" height="611" alt="image" src="https://github.com/user-attachments/assets/032c288f-c9cc-404f-a427-01878a628088" />
 
-```python
+
+<img width="1340" height="457" alt="ds55" src="https://github.com/user-attachments/assets/cafe5a14-2eee-4009-8518-937569fbfae0" />
+
+python
 df.shape
-```
-<img width="899" height="54" alt="image" src="https://github.com/user-attachments/assets/6373fd9e-999b-4744-a38f-115a4c5a77f7" />
 
-```python
+<img width="1492" height="57" alt="ds66" src="https://github.com/user-attachments/assets/aadeec55-fc32-483b-9962-27ffd2714431" />
+
+
+python
 df.set_index("PassengerId",inplace=True)
-df.describe()
-```
-<img width="1248" height="373" alt="image" src="https://github.com/user-attachments/assets/e3854b06-fdc2-476f-865f-0336e6ae68bd" />
+df
 
-```python
+<img width="1338" height="428" alt="ds77" src="https://github.com/user-attachments/assets/f988c3d6-f0f1-40ef-b0f4-2c0e66e4c13e" />
+
+
+python
 df.nunique()
-```
-<img width="778" height="523" alt="image" src="https://github.com/user-attachments/assets/2da8a330-e555-4c0d-8612-01df9f54c3b1" />
 
-```python
-sns.countplot(data=df,x="Survived")
-```
-<img width="1099" height="568" alt="image" src="https://github.com/user-attachments/assets/64d7294b-2b5f-4d7d-8ec2-05a2a8fa3a8b" />
+<img width="1540" height="408" alt="ds88" src="https://github.com/user-attachments/assets/f944a5fe-e3a1-4dd9-a37a-58665b210ceb" />
 
-```python
-df.Pclass.unique()
-```
+python
+sns.countplot(data=df,x="Age")
 
-<img width="742" height="59" alt="image" src="https://github.com/user-attachments/assets/233c237c-2ff2-4fc0-9675-323165f8f213" />
+<img width="1327" height="483" alt="age" src="https://github.com/user-attachments/assets/6c5c12b8-05db-4379-9360-131994172382" />
 
-```python
+
+python
 df.rename(columns={'Sex':'Gender'},inplace=True)
 df
-```
+<img width="1347" height="457" alt="gender" src="https://github.com/user-attachments/assets/cddb0fd6-736a-4971-88ca-0288aa349135" />
 
-<img width="1401" height="627" alt="image" src="https://github.com/user-attachments/assets/d641fcbd-5307-4ace-b637-fdb43865ee1a" />
-
-```python
+python
 sns.catplot(x="Gender",col="Survived",kind="count",data=df,height=5,aspect=.7)
-```
 
-<img width="1282" height="664" alt="image" src="https://github.com/user-attachments/assets/211f4ced-8973-4bdc-b1f9-67409700a077" />
+<img width="1398" height="551" alt="height" src="https://github.com/user-attachments/assets/c901eef9-5180-47a6-82d5-8b5c50124358" />
 
-```python
+
+python
 df.boxplot(column="Age",by="Survived")
-```
-<img width="1062" height="629" alt="image" src="https://github.com/user-attachments/assets/2674ebf1-3653-4f41-a46d-ab189f7d9176" />
 
-```python
+<img width="1202" height="516" alt="survived" src="https://github.com/user-attachments/assets/074245cc-e9ea-4aee-8de7-7f6017c094be" />
+
+python
 sns.scatterplot(x=df["Age"],y=df["Fare"])
-```
-<img width="1081" height="573" alt="image" src="https://github.com/user-attachments/assets/8bb7875e-bc61-4c38-8c6c-ba89fe4c89c7" />
 
-```python
-fig, ax1 = plt.subplots(figsize=(10,5))
-p = sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
-```
-<img width="1396" height="571" alt="image" src="https://github.com/user-attachments/assets/916f510f-66c7-4f25-b5df-823cf13ff666" />
 
-```python
-sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="count")
-```
-<img width="1407" height="647" alt="image" src="https://github.com/user-attachments/assets/3fea679a-3295-43dd-9f2f-32da2fcc9d70" />
+<img width="876" height="532" alt="fare" src="https://github.com/user-attachments/assets/577d069e-f63f-4575-bfcd-560ea328663e" />
 
-```python
-corr = df.select_dtypes(include=np.number).corr()
+python
+p = sns.boxplot(x='Pclass',y='Age',hue='Gender',data=df)
+
+<img width="902" height="527" alt="pclass" src="https://github.com/user-attachments/assets/9da2a4cd-5171-432d-b1a3-ad25f4654c5b" />
+
+python
+sns.catplot(data=df,col="Survived",hue="Gender",y="Age",x="Pclass",kind="box")
+
+<img width="1415" height="627" alt="hue" src="https://github.com/user-attachments/assets/8f053d4d-1077-4bf1-9057-92f5aa663649" />
+
+python
+corr = df.corr(numeric_only=True)
 sns.heatmap(corr, annot=True)
-```
-<img width="992" height="569" alt="image" src="https://github.com/user-attachments/assets/3657e958-0709-45a4-9f71-7b86fcb422f9" />
+
+<img width="1110" height="532" alt="heatmap" src="https://github.com/user-attachments/assets/284f6b8c-4230-4bec-9ced-efc9c9867e67" />
 
 # RESULT
 Hence performing Exploratory Data Analysis on the given data set is successfully executed.
